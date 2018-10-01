@@ -5,10 +5,22 @@
  */
 package ex003;
 
+import javax.swing.AbstractListModel;
+
 /**
  *
  * @author franz
  */
-public class AppointmentModell {
+public class AppointmentModell extends AbstractListModel{
+
+    @Override
+    public int getSize() {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    @Override
+    public Object getElementAt(int index) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
     
 }
