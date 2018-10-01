@@ -14,6 +14,9 @@ public class AppointmentDlg extends javax.swing.JDialog {
     /**
      * Creates new form AppointmentDlg
      */
+    
+    private boolean isOk;
+    
     public AppointmentDlg(java.awt.Frame parent, boolean modal) {
         super(parent, modal);
         initComponents();
@@ -28,21 +31,86 @@ public class AppointmentDlg extends javax.swing.JDialog {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        jLabel5 = new javax.swing.JLabel();
+        jLabel1 = new javax.swing.JLabel();
+        jTextField1 = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        jTextField2 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jTextField3 = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jTextField4 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        jTextField5 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        jTextField6 = new javax.swing.JTextField();
+        jButton1 = new javax.swing.JButton();
+        jButton2 = new javax.swing.JButton();
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
-        );
+        jLabel5.setText("jLabel5");
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        getContentPane().setLayout(new java.awt.GridLayout(7, 2));
+
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel1.setText("Tag:");
+        getContentPane().add(jLabel1);
+
+        jTextField1.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextField1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jTextField1);
+
+        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel2.setText("Monat:");
+        getContentPane().add(jLabel2);
+
+        jTextField2.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        getContentPane().add(jTextField2);
+
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel3.setText("Jahr:");
+        getContentPane().add(jLabel3);
+
+        jTextField3.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        getContentPane().add(jTextField3);
+
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel4.setText("Stunde:");
+        getContentPane().add(jLabel4);
+
+        jTextField4.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        getContentPane().add(jTextField4);
+
+        jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel6.setText("Minute:");
+        getContentPane().add(jLabel6);
+
+        jTextField5.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        getContentPane().add(jTextField5);
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel7.setText("Text:");
+        getContentPane().add(jLabel7);
+
+        jTextField6.setHorizontalAlignment(javax.swing.JTextField.RIGHT);
+        getContentPane().add(jTextField6);
+
+        jButton1.setText("Übernehmen");
+        getContentPane().add(jButton1);
+
+        jButton2.setText("Abbrechen");
+        getContentPane().add(jButton2);
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextField1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -87,5 +155,20 @@ public class AppointmentDlg extends javax.swing.JDialog {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jButton1;
+    private javax.swing.JButton jButton2;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JTextField jTextField1;
+    private javax.swing.JTextField jTextField2;
+    private javax.swing.JTextField jTextField3;
+    private javax.swing.JTextField jTextField4;
+    private javax.swing.JTextField jTextField5;
+    private javax.swing.JTextField jTextField6;
     // End of variables declaration//GEN-END:variables
 }
