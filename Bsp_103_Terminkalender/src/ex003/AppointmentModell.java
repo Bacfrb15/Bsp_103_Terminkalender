@@ -5,22 +5,25 @@
  */
 package ex003;
 
+import java.util.ArrayList;
 import javax.swing.AbstractListModel;
 
 /**
  *
  * @author franz
  */
-public class AppointmentModell extends AbstractListModel{
-
+public class AppointmentModell extends AbstractListModel
+{
+    private ArrayList<Appointment> termine = new ArrayList<>();
+    
     @Override
     public int getSize() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return termine.size();
     }
 
     @Override
     public Object getElementAt(int index) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        return termine.get(index);
     }
     
 }
