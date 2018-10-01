@@ -16,6 +16,9 @@ public class AppointmentGUI extends javax.swing.JFrame {
     public AppointmentGUI() {
         initComponents();
         liTermin.setModel(ap);
+        
+        ap.addTermin(new Appointment(LocalDateTime.now(), "amk"));
+        ap.addTermin(new Appointment(LocalDateTime.now(), "amk2"));
     }
 
     /**
@@ -29,7 +32,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
         jmAdd = new javax.swing.JMenuItem();
-        jMenuItem2 = new javax.swing.JMenuItem();
+        jmDelete = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -43,8 +46,13 @@ public class AppointmentGUI extends javax.swing.JFrame {
         });
         jPopupMenu1.add(jmAdd);
 
-        jMenuItem2.setText("löschen");
-        jPopupMenu1.add(jMenuItem2);
+        jmDelete.setText("löschen");
+        jmDelete.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onDelete(evt);
+            }
+        });
+        jPopupMenu1.add(jmDelete);
 
         jMenuItem3.setText("ändern");
         jPopupMenu1.add(jMenuItem3);
@@ -74,11 +82,17 @@ public class AppointmentGUI extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_onAdd
 
+    private void onDelete(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onDelete
+        int x [] = liTermin.getSelectedIndices();
+        ap.deleteTermin(x);
+    }//GEN-LAST:event_onDelete
+
     /**
      * @param args the command line arguments
      */
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
+       
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
@@ -110,12 +124,12 @@ public class AppointmentGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JMenuItem jmAdd;
+    private javax.swing.JMenuItem jmDelete;
     private javax.swing.JList<String> liTermin;
     // End of variables declaration//GEN-END:variables
 }

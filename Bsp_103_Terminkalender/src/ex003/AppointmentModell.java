@@ -30,5 +30,13 @@ public class AppointmentModell extends AbstractListModel
         termine.add(m);
         super.fireContentsChanged(termine, 0, termine.size() - 1);
     }
+
+    public void deleteTermin(int x []) {
+        for(int i = 0; i < x.length; i++)
+        {
+            termine.remove(x[i]);
+        }
+        super.fireContentsChanged(termine, 0, termine.size() -1);
+    }
     
 }
