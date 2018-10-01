@@ -1,5 +1,7 @@
 package ex003;
 
+import java.time.LocalDateTime;
+
 /**
  *
  * @author franz
@@ -26,30 +28,33 @@ public class AppointmentGUI extends javax.swing.JFrame {
     private void initComponents() {
 
         jPopupMenu1 = new javax.swing.JPopupMenu();
-        jMenuItem1 = new javax.swing.JMenuItem();
+        jmAdd = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         liTermin = new javax.swing.JList<>();
 
-        jMenuItem1.setText("hinzufügen");
+        jmAdd.setText("hinzufügen");
+        jmAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                onAdd(evt);
+            }
+        });
+        jPopupMenu1.add(jmAdd);
 
         jMenuItem2.setText("löschen");
+        jPopupMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("ändern");
+        jPopupMenu1.add(jMenuItem3);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        getContentPane().setLayout(new java.awt.GridLayout());
+        getContentPane().setLayout(new java.awt.GridLayout(1, 0));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.LOWERED), "Termine"));
-        jPanel1.setLayout(new java.awt.GridLayout());
+        jPanel1.setLayout(new java.awt.GridLayout(1, 0));
 
-        liTermin.setModel(new javax.swing.AbstractListModel<String>() {
-            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
-            public int getSize() { return strings.length; }
-            public String getElementAt(int i) { return strings[i]; }
-        });
         liTermin.setComponentPopupMenu(jPopupMenu1);
         jScrollPane1.setViewportView(liTermin);
 
@@ -59,6 +64,15 @@ public class AppointmentGUI extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void onAdd(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_onAdd
+        AppointmentDlg dlg = new AppointmentDlg(this, true);
+        dlg.setVisible(true);
+        if(dlg.isOk())
+        {
+            ap.addTermin(dlg.getAppointment());
+        }
+    }//GEN-LAST:event_onAdd
 
     /**
      * @param args the command line arguments
@@ -96,12 +110,12 @@ public class AppointmentGUI extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem jMenuItem1;
     private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JMenuItem jMenuItem3;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPopupMenu jPopupMenu1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JMenuItem jmAdd;
     private javax.swing.JList<String> liTermin;
     // End of variables declaration//GEN-END:variables
 }

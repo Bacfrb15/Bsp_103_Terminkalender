@@ -25,5 +25,10 @@ public class AppointmentModell extends AbstractListModel
     public Object getElementAt(int index) {
         return termine.get(index);
     }
+
+    public void addTermin(Appointment m) {
+        termine.add(m);
+        super.fireContentsChanged(termine, 0, termine.size() - 1);
+    }
     
 }
