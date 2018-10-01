@@ -19,6 +19,7 @@ public class AppointmentGUI extends javax.swing.JFrame {
         
         ap.addTermin(new Appointment(LocalDateTime.now(), "amk"));
         ap.addTermin(new Appointment(LocalDateTime.now(), "amk2"));
+        ap.addTermin(new Appointment(LocalDateTime.now(), "amk3"));
     }
 
     /**

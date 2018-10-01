@@ -32,7 +32,7 @@ public class AppointmentModell extends AbstractListModel
     }
 
     public void deleteTermin(int x []) {
-        for(int i = 0; i < x.length; i++)
+        for(int i = x.length -1; i > -1; i--)
         {
             termine.remove(x[i]);
         }
